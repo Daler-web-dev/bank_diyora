@@ -32,3 +32,18 @@ header {
         }
     }
 }
+
+input {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 100px;
+    // background: #000;
+}
+
+.fx{
+    width: 100px;
+    height: 100px;
+    background: #000;
+}

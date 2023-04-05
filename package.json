@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test": "echo \"Eror:no test specified\"&& exit 1",
+    "style": "node-sass -w ./scss -0 ./css"
   },
   "devDependencies": {
     "vite": "^4.2.0"
