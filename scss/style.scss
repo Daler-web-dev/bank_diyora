@@ -2,37 +2,109 @@
     padding: 0px;
     margin: 0px;
     box-sizing: border-box;
+    font-family: 'Gilroy';
 }
 
-header {
-    width: 100%;
-    padding: 26px 60px;
-    background-color: #F0F0F0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.container {
+    max-width: 1240px;
+    padding: 0 20px;
+    margin: auto;
+}
 
-    .left, nav, .right {
-        display: flex;
-        gap: 15px;
-        align-items: center;
+.greeding {
+    margin: 44px 0 74px;
 
-        .round {
-            width: 28px;
-            height: 28px;
-            background-color: #C4C4C4;
-            border-radius: 100%;
-            &:last-child {
-                width: 50px;
-                height: 50px;
-            }
-            &:hover {
-                background-color: red;
-            }
-        }
+    .welcome {
+        font-size: 48px;
+        margin-bottom: 11px;
+    }
+
+    .email {
+        font-size: 18px;
+        font-weight: 700;
+        color: #0047FF;
     }
 }
 
+.wallets {
+    display: flex;
+    flex-direction: column;
+    gap: 21px;
+
+    h3 {
+        font-size: 24px;
+        font-weight: 500;
+    }
+
+    .walletsList {
+        display: flex;
+        gap: 24px;
+        align-items: center;
+        flex-wrap: wrap;
+
+        .wallet {
+            padding: 19px 23px;
+            width: 282px;
+            height: 160px;
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: flex-start;
+            color: white;
+
+            .type {
+                font-size: 24px;
+                font-weight: 500;
+            }
+
+            .currency {
+                font-size: 14px;
+                font-weight: 700;
+            }
+        }
+    }
+
+    .more {
+        text-decoration: underline;
+        color: #0047FF;
+        font-weight: 600;
+        cursor: pointer;
+    }
+}
+.transactions {
+    margin: 74px 0;
+
+    h3 {
+        font-size: 24px;
+        font-weight: 500;
+        margin-bottom: 32px;
+    }
+
+    table {
+        width: 100%;
+
+        th{
+            color: #B9C0D1;
+        }
+
+        td {
+            font-size: 14px;
+            font-weight: 500;
+            padding: 12px 0;
+            border-bottom: 1px solid #B9C0D1;
+        }
+
+    }
+
+    .more {
+        text-decoration: underline;
+        color: #0047FF;
+        font-weight: 600;
+        cursor: pointer;
+        margin-top: 21px;
+    }
+}
 .container{
     width: 80%;
     margin: 0 auto;
@@ -87,5 +159,3 @@ header {
         }
     }
 }
-
-   
