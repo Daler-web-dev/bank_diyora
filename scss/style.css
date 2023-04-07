@@ -1,0 +1,119 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 195px;
+}
+
+.wallet {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+input {
+    width: 100%;
+    height: 30px;
+    border-radius: 6px;
+    border: 1.5px solid gray;
+    padding: 3px;
+    padding-left: 10px;
+}
+
+select {
+    width: 315px;
+    height: 37px;
+    border-radius: 10px;
+    border: 1.5px solid gray;
+    padding: 4px;
+    padding-left: 10px;
+
+
+}
+
+button {
+    width: 315px;
+    height: 37px;
+    background: #0047FF;
+    border-radius: 10px;
+    color: #FFFFFF;
+    border: none;
+}
+
+button a {
+    font-weight: 550;
+    list-style: none;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+h1 {
+    font-size: 32px;
+    font-weight: 600;
+    font-family: sans-serif;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.field-group {
+    width: 600px;
+    position: relative;
+}
+
+.input-failed {
+    width: 100%;
+    outline: 0;
+    border: 0;
+    border-bottom: 2px solid #999999;
+    padding: 10px 0;
+    background: transparent;
+    font-size: 2em;
+    color: #FFFFFF;
+    transition: 0.3s ease;
+}
+
+.input-label {
+    display: block;
+    position: absolute;
+    top: 0;
+    font-size: 1em;
+    color: #999999;
+    text-transform: uppercase;
+    transition: 0.3 ease;
+}
+
+.input_failed::placeholder {
+    color: transparent;
+}
+
+.input-failed:placeholder-shown~.input-label {
+    font-size: 2em;
+    top: 20px;
+}
+
+.input-failed:focus {
+    border-image: linear-gradient(to right, #ef5a03, #d1d357);
+    border-image-slice: 1;
+}
+
+.input-failed:focus~.input-label {
+    display: block;
+    position: absolute;
+    top: 0;
+    font-size: 1em;
+    color: #ef5a03;
+}

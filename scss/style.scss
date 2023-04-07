@@ -2,6 +2,7 @@
     padding: 0px;
     margin: 0px;
     box-sizing: border-box;
+
     font-family: sans-serif;
 }
 
@@ -30,6 +31,66 @@ header {
                 text-align: center;
                 color: black;
                 margin-right: 15px;
+    font-family: 'Gilroy';
+}
+
+.container {
+    max-width: 1240px;
+    padding: 0 20px;
+    margin: auto;
+}
+
+.greeding {
+    margin: 44px 0 74px;
+
+    .welcome {
+        font-size: 48px;
+        margin-bottom: 11px;
+    }
+
+    .email {
+        font-size: 18px;
+        font-weight: 700;
+        color: #0047FF;
+    }
+}
+
+.wallets {
+    display: flex;
+    flex-direction: column;
+    gap: 21px;
+
+    h3 {
+        font-size: 24px;
+        font-weight: 500;
+    }
+
+    .walletsList {
+        display: flex;
+        gap: 24px;
+        align-items: center;
+        flex-wrap: wrap;
+
+        .wallet {
+            padding: 19px 23px;
+            width: 282px;
+            height: 160px;
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: flex-start;
+            color: white;
+
+            .type {
+                font-size: 24px;
+                font-weight: 500;
+            }
+
+            .currency {
+                font-size: 14px;
+                font-weight: 700;
+
             }
         }
 
@@ -42,4 +103,55 @@ header {
         }
 
     }
+
+
+    .more {
+        text-decoration: underline;
+        color: #0047FF;
+        font-weight: 600;
+        cursor: pointer;
+    }
 }
+.transactions {
+    margin: 74px 0;
+
+    h3 {
+        font-size: 24px;
+        font-weight: 500;
+        margin-bottom: 32px;
+    }
+
+    table {
+        width: 100%;
+
+        th{
+            color: #B9C0D1;
+        }
+
+        td {
+            font-size: 14px;
+            font-weight: 500;
+            padding: 12px 0;
+            border-bottom: 1px solid #B9C0D1;
+        }
+
+    }
+
+    .more {
+        text-decoration: underline;
+        color: #0047FF;
+        font-weight: 600;
+        cursor: pointer;
+        margin-top: 21px;
+    }
+}
+
+input {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 100px;
+    // background: #000;
+}
+
