@@ -2,6 +2,35 @@
     padding: 0px;
     margin: 0px;
     box-sizing: border-box;
+
+    font-family: sans-serif;
+}
+
+header {
+    width: 100%;
+    background-color: #f0f0f0;
+    height: 50px;
+    margin: 0 auto;
+    text-align: center;
+    align-items: center;
+
+    .header_flex {
+        display: flex;
+        justify-content: space-between;
+        padding: 15px;
+        align-items: center;
+        text-align: center;
+        width: 80%;
+        margin: 0 auto;
+
+        .flex_left,
+        .flex_right {
+            a {
+                text-decoration: none;
+                align-items: center;
+                text-align: center;
+                color: black;
+                margin-right: 15px;
     font-family: 'Gilroy';
 }
 
@@ -61,9 +90,20 @@
             .currency {
                 font-size: 14px;
                 font-weight: 700;
+
             }
         }
+
+        .right_img {
+            width: 20px;
+            height: 20px;
+            margin-bottom: -5px;
+            align-items: center;
+            text-align: center;
+        }
+
     }
+
 
     .more {
         text-decoration: underline;
@@ -115,8 +155,3 @@ input {
     // background: #000;
 }
 
-.fx{
-    width: 100px;
-    height: 100px;
-    background: #000;
-}
