@@ -1,4 +1,5 @@
 import axios from "axios";
+import { getData } from "/modules/http.request";
 let form = document.forms.login;
 
 form.onsubmit = (e) => {
@@ -14,7 +15,7 @@ form.onsubmit = (e) => {
     const { email, password } = obj
 
     if (email && password) {
-        axios.get('http://localhost:7777/users?email=' + email)
+        getData("/users?email=" + email)
             .then(res => {
                 if (res.data.length !== 0) {
                     let user = res.data[0]
@@ -30,7 +31,7 @@ form.onsubmit = (e) => {
                 } else {
                     alert('Нет такого пользователя')
                 }
-            })
+            })  
     } else {
         alert("Заполните все поля!")
     }

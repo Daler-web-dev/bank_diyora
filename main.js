@@ -1,9 +1,10 @@
 import axios from "axios"
+import { getData } from "/modules/http.request"
 import headerCreater from "/modules/header.js"
+import { reloadWallets } from "/modules/ui"
 
 headerCreater()
 
-let b_url = "http://localhost:7777"
 let wList = document.querySelector('.walletsList')
 let table = document.querySelector('.transactions table')
 let user = JSON.parse(localStorage.getItem('user'))
@@ -13,50 +14,10 @@ let userEmail = document.querySelector('.greeding .email')
 userNameView.innerHTML = `${user.name} ${user.surname}`
 userEmail.innerHTML = `${user.email}`
 
-axios.get(`${b_url}/cards`)
-.then(res => {
-    let arr = res.data.filter(el => {
-        if (el.id === user.id) {
-            return el
-        }
-    });
-    reloadWallets(arr, wList)
-})
 
-axios.get(`${b_url}/transactions`)
-.then(res => {
-    let arr = res.data.filter(el => {
-        if (el.id === user.id) {
-            return el
-        }
-    });
-    reloadTransactions(arr, table)
-})
+getData("/cards?user_id=" + user.id)
+    .then(res => reloadWallets(res.data, wList))
 
-
-function reloadWallets(arr, place) {
-    place.innerHTML = ''
-    if (arr.length === 0) {
-        place.innerHTML = "У вас нету карт."
-        return
-    }
-    for (let item of arr) {
-        let wallet = document.createElement('div')
-        let type = document.createElement('type')
-        let currency = document.createElement('currency')
-
-        wallet.classList.add('wallet')
-        type.classList.add('type')
-        currency.classList.add('currency')
-        wallet.style.background = `linear-gradient(90deg, ${rndColorGenerator()}, ${rndColorGenerator()})`
-
-        type.innerHTML = 'Visa'
-        currency.innerHTML = 'RUB'
-
-        wallet.append(type, currency)
-        place.append(wallet)
-    }
-}
 
 
 function reloadTransactions(arr, place) {
@@ -85,12 +46,7 @@ function reloadTransactions(arr, place) {
     }
 }
 
-function rndColorGenerator() {
-    let r = Math.round(Math.random() * 255)
-    let g = Math.round(Math.random() * 255)
-    let b = Math.round(Math.random() * 255)
-    return `rgb(${r}, ${g}, ${b})`
-}
+
 
 function reloadTableHead(place) {
     let tr = document.createElement('tr')
@@ -113,3 +69,7 @@ function reloadTableHead(place) {
     tr.append(th1, th2, th3, th4, th5)
     place.append(tr)
 }
+
+console.log(
+    import.meta.env.VITE_BASE_URL
+);

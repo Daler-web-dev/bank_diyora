@@ -20,17 +20,14 @@
     <center>
         <form name="addCard" class="wallet">
             <h1>Добавить кошелек </h1>
-            <input type="text" name="name" id="name" placeholder="Имя" class="input-field" autocomplete="off">
-            <select name="select">
-                <option value="sum">Сум</option>
-                <option value="dollar">Доллар</option>
-                <option value="rub">Рубль</option>
-                <option value="tenge">Тенге</option>
-                <option value="manat">Манат</option>
-                <option value="lira">Лира</option>
-            </select>
+            <input type="text" name="name" placeholder="Имя" class="input-field">
+            <input type="text" name="total" placeholder="Сумма">
+            <input list="currencies" name="currency">
+
+            <datalist id="currencies"></datalist>
+
             <button>
-                <a href="./transaction.html">Добавить</a>
+                Добавить
             </button>
         </form>
     </center>

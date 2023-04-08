@@ -31,9 +31,25 @@
   ],
   "cards": [
     {
-      "id": 4,
-      "name": "first",
-      "select": "dollar"
+      "id": 2630918763,
+      "user_id": 3,
+      "name": "humo",
+      "total": 30000,
+      "currency": "USD"
+    },
+    {
+      "id": 31232164,
+      "user_id": 4,
+      "name": "visa",
+      "total": 150,
+      "currency": "BTC"
+    },
+    {
+      "id": 0.0018140259601411302,
+      "user_id": 3,
+      "name": "mastercard",
+      "total": "10",
+      "currency": "AFN"
     }
   ],
   "transactions": []
