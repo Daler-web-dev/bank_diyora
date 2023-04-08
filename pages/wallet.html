@@ -1,40 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="/scss/style.css">
     <title>wallet</title>
 </head>
+
 <body>
-   
-    
+
     <div class="main">
         <div class="loader">
             <div class="animation"></div>
         </div>
-     </div>
+    </div>
 
     <center>
-        <div class="wallet">
+        <form name="addCard" class="wallet">
             <h1>Добавить кошелек </h1>
-                <input type="text" name="name" id="name" placeholder="Имя" class="input-field" autocomplete="off">
-            <select  name="select" >
-                <option value="">Сум</option>
-                <option value="">Доллар</option>
-                <option value="">Рубль</option>
-                <option value="">Тенге</option>
-                <option value="">Манат</option>
-                <option value="">Лира</option>
+            <input type="text" name="name" id="name" placeholder="Имя" class="input-field" autocomplete="off">
+            <select name="select">
+                <option value="sum">Сум</option>
+                <option value="dollar">Доллар</option>
+                <option value="rub">Рубль</option>
+                <option value="tenge">Тенге</option>
+                <option value="manat">Манат</option>
+                <option value="lira">Лира</option>
             </select>
             <button>
                 <a href="./transaction.html">Добавить</a>
             </button>
-        </div>
+        </form>
     </center>
 
-    <script src="./style.js"></script>
-    
+    <script type="module" src="/modules/wallet.js"></script>
+
 </body>
+
 </html>

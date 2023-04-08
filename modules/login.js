@@ -2,27 +2,27 @@ import axios from "axios";
 let form = document.forms.login;
 
 form.onsubmit = (e) => {
-	e.preventDefault();
-	
-	let obj = {};
+    e.preventDefault();
 
-	let fm = new FormData(form);
-	fm.forEach((v, k) => {
-		obj[k] = v
-	});
+    let obj = {};
 
-	const {email,password} = obj
+    let fm = new FormData(form);
+    fm.forEach((v, k) => {
+        obj[k] = v
+    });
 
-	if(email && password) {
-		axios.get('http://localhost:7777/users?email=' + email)
+    const { email, password } = obj
+
+    if (email && password) {
+        axios.get('http://localhost:7777/users?email=' + email)
             .then(res => {
-                
-                if(res.data.length !== 0) {
+                if (res.data.length !== 0) {
                     let user = res.data[0]
-                    if(res.status === 200 || res.status === 201) {
-                        if(user.password === password) {
-                            localStorage.setItem('user',JSON.stringify(user))
+                    if (res.status === 200 || res.status === 201) {
+                        if (user.password === password) {
+                            localStorage.setItem('user', JSON.stringify(user))
                             location.assign('/')
+                            form.reset()
                         } else {
                             alert('Wrong password')
                         }
@@ -31,5 +31,7 @@ form.onsubmit = (e) => {
                     alert('Нет такого пользователя')
                 }
             })
-	} 
+    } else {
+        alert("Заполните все поля!")
+    }
 };
