@@ -1,49 +1,45 @@
+import axios from "axios"
+import headerCreater from "/modules/header.js"
 
-let body = document.body
+headerCreater()
 
-let header = document.createElement('header')
-let header_flex = document.createElement('div')
-let flex_left = document.createElement('div')
-let flex_right = document.createElement('div')
-let left_a_1 = document.createElement('a')
-let left_a_2 = document.createElement('a')
-let left_a_3 = document.createElement('a')
-let right_a_1 = document.createElement('a')
-let right_img = document.createElement('img')
-
-left_a_1.innerHTML = "Главная"
-left_a_2.innerHTML = "Мои кошельки"
-left_a_3.innerHTML = "Мои транзакции"
-right_a_1.innerHTML = "alexadams@google.com"
-
-right_img.src = `./img/logo_exit.svg`
-
-left_a_1.href //СЮДА ОКНА КУДА ПЕРЕМЕЩАТСЯ
-left_a_2.href //СЮДА ОКНА КУДА ПЕРЕМЕЩАТСЯ
-left_a_3.href //СЮДА ОКНА КУДА ПЕРЕМЕЩАТСЯ
-
-header_flex.classList.add('header_flex')
-flex_left.classList.add('flex_left')
-flex_right.classList.add('flex_right')
-right_img.classList.add('right_img')
-
-
-flex_left.append(left_a_1, left_a_2, left_a_3)
-flex_right.append(right_a_1, right_img)
-header_flex.append(flex_left, flex_right)
-header.append(header_flex)
-body.append(header)
-=======
+let b_url = "http://localhost:7777"
 let wList = document.querySelector('.walletsList')
 let table = document.querySelector('.transactions table')
+let user = JSON.parse(localStorage.getItem('user'))
+let userNameView = document.querySelector('.welcome .userName')
+let userEmail = document.querySelector('.greeding .email')
 
-let data = [1, 2, 3, 4]
+userNameView.innerHTML = `${user.name} ${user.surname}`
+userEmail.innerHTML = `${user.email}`
 
-reloadWallets(data, wList)
-reloadTransactions(data, table)
+axios.get(`${b_url}/cards`)
+.then(res => {
+    let arr = res.data.filter(el => {
+        if (el.id === user.id) {
+            return el
+        }
+    });
+    reloadWallets(arr, wList)
+})
+
+axios.get(`${b_url}/transactions`)
+.then(res => {
+    let arr = res.data.filter(el => {
+        if (el.id === user.id) {
+            return el
+        }
+    });
+    reloadTransactions(arr, table)
+})
+
 
 function reloadWallets(arr, place) {
     place.innerHTML = ''
+    if (arr.length === 0) {
+        place.innerHTML = "У вас нету карт."
+        return
+    }
     for (let item of arr) {
         let wallet = document.createElement('div')
         let type = document.createElement('type')
@@ -62,9 +58,14 @@ function reloadWallets(arr, place) {
     }
 }
 
+
 function reloadTransactions(arr, place) {
     place.innerHTML = ''
     reloadTableHead(place)
+    if (arr.length === 0) {
+        place.innerHTML = "У вас не было трансакций."
+        return
+    }
     for (let item of arr) {
         let tr = document.createElement('tr')
         let td1 = document.createElement('td')
@@ -111,23 +112,4 @@ function reloadTableHead(place) {
 
     tr.append(th1, th2, th3, th4, th5)
     place.append(tr)
-}
-let h1 = document.querySelector('h2')
-let btn = document.querySelector('button')
-let input = document.querySelector('input')
-
-let loc = JSON.parse(localStorage.getItem('title'))
-
-h1.innerHTML = loc.title
-
-
-btn.onclick = () => {
-	let obj = {
-		title: input.value,
-		isLoacal: true
-	}
-
-	h1.innerHTML = input.value
-
-	localStorage.setItem('title', JSON.stringify(obj))
 }

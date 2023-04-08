@@ -29,6 +29,12 @@
       "id": 4
     }
   ],
-  "cards": [],
+  "cards": [
+    {
+      "id": 4,
+      "name": "first",
+      "select": "dollar"
+    }
+  ],
   "transactions": []
 }

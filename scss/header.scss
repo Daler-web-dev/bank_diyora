@@ -1,0 +1,36 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+header {
+    width: 100%;
+    background-color: #f0f0f0;
+    margin: 0 auto;
+    text-align: center;
+    align-items: center;
+
+    .header_flex {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-align: center;
+        padding: 25px;
+        width: 1240px;
+        margin: 0 auto;
+
+        .flex_left,
+        .flex_right {
+            a {
+                text-decoration: none;
+                align-items: center;
+                text-align: center;
+                color: black;
+                margin-right: 15px;
+                font-family: 'Gilroy';
+            }
+        }
+    }
+}
