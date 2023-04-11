@@ -50,7 +50,46 @@
       "name": "mastercard",
       "total": "10",
       "currency": "AFN"
+    },
+    {
+      "id": 0.03756611027038925,
+      "user_id": 3,
+      "name": "REDFOX",
+      "total": "10",
+      "currency": "AOA"
+    },
+    {
+      "id": 0.4291799815664108,
+      "user_id": 2,
+      "name": "3dsmax",
+      "total": "70000",
+      "currency": "USD"
     }
   ],
-  "transactions": []
+  "transactions": [
+    {
+      "id": 0.6536444485418342,
+      "user_id": 3,
+      "date": "2023-3-11",
+      "card": {
+        "id": 0.0018140259601411302,
+        "name": "mastercard",
+        "currency": "AFN"
+      },
+      "total": "10",
+      "category": "food"
+    },
+    {
+      "id": 0.8755528091851312,
+      "user_id": 3,
+      "date": "2023-4-11",
+      "card": {
+        "id": 2630918763,
+        "name": "humo",
+        "currency": "USD"
+      },
+      "total": "50000",
+      "category": "car"
+    }
+  ]
 }

@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/scss/transactions.scss">
+    <link rel="stylesheet" href="/scss/header.scss">
     <title>Document</title>
 </head>
 
@@ -13,7 +14,9 @@
     <div class="container">
         <div class="boxUp">
             <h2>Мои транзакции</h2>
-            <button class="pay_add">Добавить</button>
+            <a href="/pages/transaction.html">
+                <button class="pay_add">Добавить</button>
+            </a>
         </div>
         <table>
             <thead>
@@ -26,17 +29,12 @@
                 </tr>
             </thead>
             <tbody>
-                <td>1232321</td>
-                <td>VISA</td>
-                <td>Автомобиль</td>
-                <td>414,000,000</td>
-                <td>4 дня назад</td>
             </tbody>
         </table>
     </div>
-    
-    <script src="/bank_diyora/modules/transactions.js"></script>
-	<script src="/modules/police.js"></script>
+
+    <script type="module" src="/modules/transactions.js"></script>
+    <script src="/modules/police.js"></script>
 </body>
 
 </html>

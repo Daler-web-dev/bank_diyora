@@ -32,5 +32,11 @@ function headerCreater() {
     header_flex.append(flex_left, flex_right)
     header.append(header_flex)
     body.prepend(header)
+
+
+    flex_right.onclick = () => {
+        localStorage.clear()
+        location.reload()
+    }
 }
 export default headerCreater

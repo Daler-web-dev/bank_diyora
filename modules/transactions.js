@@ -1,17 +1,33 @@
-let btnAdd = document.querySelector('.pay_add')
-let table = document.querySelector('table')
+import { getData } from './http.request'
+import headerCreater from '/modules/header'
 let tBody = document.querySelector('tbody') 
+let user = JSON.parse(localStorage.getItem('user'))
 
-let tId = document.createElement('td')
-let wallet = document.createElement('td')
-let cat = document.createElement('td')
-let amount = document.createElement('td')
-let date = document.createElement('td')
+getData('/transactions?user_id=' + user.id)
+    .then(res => {
+        relaod_tr(res.data, tBody)
+    })
 
-tId.innerHTML = "1232321"
-wallet.innerHTML = "VISA"
-cat.innerHTML = "Автомобиль"
-amount.innerHTML = "414,000,000"
-date.innerHTML = "4 дня назад"
+function relaod_tr(arr, place) {
+    place.innerHTML = ""
 
-tBody.append(tId, wallet, cat, amount, date)
+    for(let item of arr) {
+        let tr = document.createElement('tr')
+        let tId = document.createElement('td')
+        let wallet = document.createElement('td')
+        let cat = document.createElement('td')
+        let amount = document.createElement('td')
+        let date = document.createElement('td')
+
+        tId.innerHTML = item.id
+        wallet.innerHTML = item.card.name
+        cat.innerHTML = item.category
+        amount.innerHTML = item.total
+        date.innerHTML = item.date
+
+        tr.append(tId, wallet, cat, amount, date)
+        tBody.append(tr)
+    }
+}
+
+headerCreater()

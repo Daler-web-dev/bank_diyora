@@ -1,29 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="/scss/style.css">
+    <link rel="stylesheet" href="/scss/style.css">
     <title>transaction</title>
 </head>
+
 <body>
 
 
     <center>
-        <div class="wallet">
-            
-            <h1>Добавить транзакцию </h1>
-            <input type="text" name="cartName" id="name" placeholder="Из кошелька"  >
-            <input type="number" name="sum" id="name" placeholder="Сумма">
-            <input type="text" name="category" id="name" placeholder="Категория" >
-            
-            <button>Добавить</button>
-        </div>
-    </center>
-    
+        <form name="add_transaction" class="wallet">
 
-    <script src="./style.js"></script>
+            <h1>Добавить транзакцию </h1>
+            <select name="card" id="select"></select>
+            <input type="number" name="total" id="name" placeholder="Сумма">
+            <input type="text" name="category" id="name" placeholder="Категория">
+
+            <button>Добавить</button>
+        </form>
+    </center>
+
     <script src="/modules/police.js"></script>
+    <script type="module" src="/modules/transaction.js"></script>
 </body>
+
 </html>
