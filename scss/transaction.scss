@@ -23,19 +23,10 @@ center {
 
 input {
     width: 100%;
-    height: 30px;
+    height: 37px;
     border-radius: 6px;
     border: 1.5px solid gray;
     padding: 3px;
-    padding-left: 10px;
-}
-
-select {
-    width: 315px;
-    height: 37px;
-    border-radius: 10px;
-    border: 1.5px solid gray;
-    padding: 4px;
     padding-left: 10px;
 }
 
@@ -56,10 +47,13 @@ h1 {
 }
 
 form {
+    width: 315px;
     display: flex;
     gap: 20px;
     flex-direction: column;
     margin-bottom: 20px;
+    align-items: center;
+    justify-content: center;
 }
 
 .field-group {

@@ -27,6 +27,13 @@
       "surname": "adams",
       "password": "9999",
       "id": 4
+    },
+    {
+      "email": "eldor@gmail.com",
+      "name": "Eldor",
+      "surname": "Ergashev",
+      "password": "3535",
+      "id": 5
     }
   ],
   "cards": [
@@ -50,7 +57,46 @@
       "name": "mastercard",
       "total": "10",
       "currency": "AFN"
+    },
+    {
+      "id": 0.13694100034489387,
+      "user_id": 5,
+      "name": "Visa",
+      "total": "1 000 000 000 000",
+      "currency": "USD"
+    },
+    {
+      "id": 0.1369410003448937,
+      "user_id": 5,
+      "name": "asdf;klj",
+      "total": "1 000 000 000 000",
+      "currency": "USD"
     }
   ],
-  "transactions": []
+  "transactions": [
+    {
+      "user_id": 5,
+      "date": "1",
+      "currency": "Visa",
+      "total": "50000",
+      "category": "asdfasdf",
+      "id": 1
+    },
+    {
+      "user_id": 5,
+      "date": "1",
+      "currency": "Visa",
+      "total": "40000",
+      "category": "grgafg",
+      "id": 2
+    },
+    {
+      "user_id": 5,
+      "date": "1",
+      "currency": "Visa",
+      "total": "20000",
+      "category": ";lskjdfl",
+      "id": 3
+    }
+  ]
 }

@@ -1,17 +1,9 @@
+import { reloadTransactions } from "/modules/ui"
+import { getData } from "/modules/http.request"
+
 let btnAdd = document.querySelector('.pay_add')
-let table = document.querySelector('table')
 let tBody = document.querySelector('tbody') 
 
-let tId = document.createElement('td')
-let wallet = document.createElement('td')
-let cat = document.createElement('td')
-let amount = document.createElement('td')
-let date = document.createElement('td')
+getData("/transactions").then(res => reloadTransactions(res.data, tBody))
 
-tId.innerHTML = "1232321"
-wallet.innerHTML = "VISA"
-cat.innerHTML = "Автомобиль"
-amount.innerHTML = "414,000,000"
-date.innerHTML = "4 дня назад"
-
-tBody.append(tId, wallet, cat, amount, date)
+btnAdd.onclick = () => location.assign("/pages/transaction.html")
