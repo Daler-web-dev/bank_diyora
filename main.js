@@ -15,13 +15,14 @@ let user = JSON.parse(localStorage.getItem('user'))
 userNameView.innerHTML = `${user.name} ${user.surname}`
 userEmail.innerHTML = `${user.email}`
 
-
 getData("/cards?user_id=" + user.id)
     .then(res => reloadWallets(res.data, wList))
 
+getData("/transactions?user_id=" + user.id)
+    .then(res => reloadTransactions(res.data, table))
 
 
-function reloadTransactions(arr, place) {
+export function reloadTransactions(arr, place) {
     place.innerHTML = ''
     reloadTableHead(place)
     if (arr.length === 0) {
@@ -36,18 +37,16 @@ function reloadTransactions(arr, place) {
         let td4 = document.createElement('td')
         let td5 = document.createElement('td')
 
-        td1.innerHTML = '1232312'
-        td2.innerHTML = 'VISA'
-        td3.innerHTML = 'Автомобиль'
-        td4.innerHTML = '414,000,000'
-        td5.innerHTML = '4 дня назад'
+        td1.innerHTML = item.id
+        td2.innerHTML = item.card.name
+        td3.innerHTML = item.category
+        td4.innerHTML = item.total
+        td5.innerHTML = item.date
 
         tr.append(td1, td2, td3, td4, td5)
         place.append(tr)
     }
 }
-
-
 
 function reloadTableHead(place) {
     let tr = document.createElement('tr')
@@ -70,7 +69,3 @@ function reloadTableHead(place) {
     tr.append(th1, th2, th3, th4, th5)
     place.append(tr)
 }
-
-console.log(
-    import.meta.env.VITE_BASE_URL
-);

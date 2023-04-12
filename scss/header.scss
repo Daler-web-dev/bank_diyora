@@ -23,13 +23,26 @@ header {
 
         .flex_left,
         .flex_right {
+            align-items: center;
+            display: flex;
+            border-bottom: 1px solid transparent;
+
+            &:nth-child(2):hover {
+                text-decoration: underline;
+            }
+
             a {
+                cursor: pointer;
                 text-decoration: none;
                 align-items: center;
                 text-align: center;
                 color: black;
                 margin-right: 15px;
                 font-family: 'Gilroy';
+
+                &:hover {
+                    text-decoration: underline;
+                }
             }
         }
     }
