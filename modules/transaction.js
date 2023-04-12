@@ -1,45 +1,50 @@
-import { getData, postData, patchData } from "/modules/http.request";
-let form = document.forms.trans;
-let select = document.querySelector('datalist')
+import axios from 'axios'
+import { postData } from './http.request'
+import {getData} from '/modules/http.request'
+let form = document.forms.add_transaction
+let select = form.querySelector('select')
 let user = JSON.parse(localStorage.getItem('user'))
 
-getData('/cards?user_id=' + user.id)
+getData("/cards?user_id=" + user.id)
     .then(res => {
-        for (let item of res.data) {
-            let opt = new Option(item.name, item.name)
+        console.log(res);
+        for(let item of res.data) {
+            let opt = new Option(item.name, JSON.stringify(item))
             select.append(opt)
         }
     })
 
-let endtime = `${new Date().getFullYear()}-${new Date().getMonth() + 1}-${new Date().getDate()} ${new Date().getHours()}:${new Date().getMinutes()}`
-function remainingDate(date) {
-    let t = Date.parse(date) - Date.parse(new Date()),
-        days = Math.floor((t / 1000) / 60 / 60 / 24)
-    days = days.toString().replace("-", "")
-    return days
-}
 
 form.onsubmit = (e) => {
-    e.preventDefault();
-    let obj = { user_id: user.id, date: remainingDate(endtime) };
-    let fm = new FormData(form);
-    fm.forEach((v, k) => obj[k] = v)
-    const { category, currency, total } = obj
-    if (currency && category && total) {
-        // postData('/transactions', obj)
-        //     .then(res => {
-        //         if (res.status === 200 || res.status === 201) {
-        //             location.assign("/pages/transactions.html")
-        //             form.reset()
-        //         }
-        //     })
+    e.preventDefault()
+    let date = new Date()
 
-    } else {
-        alert("Заполните все поля!")
+    let transaction = {
+        id: Math.random(),
+        user_id: user.id,
+        date: date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate()
     }
-};
 
-getData("/cards?user_id=" + user.id,)
-    .then(res => {
-        patchData(res.data).then(res => console.log(res))
+    let fm = new FormData(form)
+
+    fm.forEach((value, key) => {
+        transaction[key] = value
     })
+
+    transaction.card = JSON.parse(transaction.card)
+
+
+
+    let {card} = transaction
+
+    delete card.total 
+    delete card.user_id 
+
+    postData('/transactions', transaction)
+        .then(res => {
+            location.assign('/pages/transactions.html')
+
+            // axios.patch('/cards?id=' + card.id, {})
+
+        })
+}

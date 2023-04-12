@@ -27,13 +27,6 @@
       "surname": "adams",
       "password": "9999",
       "id": 4
-    },
-    {
-      "email": "eldor@gmail.com",
-      "name": "Eldor",
-      "surname": "Ergashev",
-      "password": "3535",
-      "id": 5
     }
   ],
   "cards": [
@@ -59,44 +52,44 @@
       "currency": "AFN"
     },
     {
-      "id": 0.13694100034489387,
-      "user_id": 5,
-      "name": "Visa",
-      "total": "1 000 000 000 000",
-      "currency": "USD"
+      "id": 0.03756611027038925,
+      "user_id": 3,
+      "name": "REDFOX",
+      "total": "10",
+      "currency": "AOA"
     },
     {
-      "id": 0.1369410003448937,
-      "user_id": 5,
-      "name": "asdf;klj",
-      "total": "1 000 000 000 000",
+      "id": 0.4291799815664108,
+      "user_id": 2,
+      "name": "3dsmax",
+      "total": "70000",
       "currency": "USD"
     }
   ],
   "transactions": [
     {
-      "user_id": 5,
-      "date": "1",
-      "currency": "Visa",
+      "id": 0.6536444485418342,
+      "user_id": 3,
+      "date": "2023-3-11",
+      "card": {
+        "id": 0.0018140259601411302,
+        "name": "mastercard",
+        "currency": "AFN"
+      },
+      "total": "10",
+      "category": "food"
+    },
+    {
+      "id": 0.8755528091851312,
+      "user_id": 3,
+      "date": "2023-4-11",
+      "card": {
+        "id": 2630918763,
+        "name": "humo",
+        "currency": "USD"
+      },
       "total": "50000",
-      "category": "asdfasdf",
-      "id": 1
-    },
-    {
-      "user_id": 5,
-      "date": "1",
-      "currency": "Visa",
-      "total": "40000",
-      "category": "grgafg",
-      "id": 2
-    },
-    {
-      "user_id": 5,
-      "date": "1",
-      "currency": "Visa",
-      "total": "20000",
-      "category": ";lskjdfl",
-      "id": 3
+      "category": "car"
     }
   ]
 }

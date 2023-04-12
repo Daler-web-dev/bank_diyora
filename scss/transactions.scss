@@ -1,4 +1,4 @@
-* {
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -47,8 +47,13 @@
         display: table;
         padding: 10px;
 
-        th {
-            color: #B9C0D1;
+        thead {
+            th {
+                text-align: left;
+                border-bottom: 1px solid #f0f0f0;
+                padding: 15px 0;
+                color: #C2C8D7;
+            }
         }
 
         tbody {
@@ -57,9 +62,6 @@
                 border-bottom: 1px solid #f0f0f0;
                 padding: 10px 0;
             }
-        }
-        h4{
-            color: red;
         }
     }
 }

@@ -5,30 +5,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/scss/transaction.scss ">
-    <link rel="stylesheet" href="/scss/header.scss">
+    <link rel="stylesheet" href="/scss/style.css">
     <title>transaction</title>
 </head>
 
 <body>
 
+
     <center>
-        <div class="wallet">
+        <form name="add_transaction" class="wallet">
 
             <h1>Добавить транзакцию </h1>
-            <form action="" name="trans">
-                <input list="currencies" name="currency" placeholder="Из кошелька">
-                <input type="number" name="total" id="name" placeholder="Сумма">
-                <input type="text" name="category" id="name" placeholder="Категория">
-                <datalist id="currencies"></datalist>
-                <button>Добавить</button>
-            </form>
-        </div>
+            <select name="card" id="select"></select>
+            <input type="number" name="total" id="name" placeholder="Сумма">
+            <input type="text" name="category" id="name" placeholder="Категория">
+
+            <button>Добавить</button>
+        </form>
     </center>
 
-    <script type="module" src="/modules/transaction.js"></script>
     <script src="/modules/police.js"></script>
-    <script type="module" src="/modules/header.js"></script>
+    <script type="module" src="/modules/transaction.js"></script>
 </body>
 
 </html>

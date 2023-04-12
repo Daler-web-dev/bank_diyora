@@ -1,3 +1,4 @@
+let user = JSON.parse(localStorage.getItem('user'))
 function headerCreater() {
     let body = document.body
     let header = document.createElement('header')
@@ -13,10 +14,10 @@ function headerCreater() {
     left_a_1.innerHTML = "Главная"
     left_a_2.innerHTML = "Мои кошельки"
     left_a_3.innerHTML = "Мои транзакции"
-    right_a_1.innerHTML = "alexadams@google.com"
+    right_a_1.innerHTML = user.email
 
     right_img.src = `/public/images/logo_exit.svg`
-    right_img.onclick = () => location.assign('/')
+    right_img.onclick = () => location.reload()
 
     left_a_1.href = '/'
     left_a_2.href = '/pages/wallets.html'
@@ -32,5 +33,11 @@ function headerCreater() {
     header_flex.append(flex_left, flex_right)
     header.append(header_flex)
     body.prepend(header)
+
+
+    flex_right.onclick = () => {
+        localStorage.clear()
+        location.reload()
+    }
 }
 export default headerCreater

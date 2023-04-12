@@ -1,9 +1,9 @@
-import { reloadTransactions } from "/modules/ui"
-import { getData } from "/modules/http.request"
+import { getData } from './http.request'
+import { reloadTransactions } from '../main'
+import headerCreater from './header'
+let tbody = document.querySelector('tbody')
 
-let btnAdd = document.querySelector('.pay_add')
-let tBody = document.querySelector('tbody') 
+getData('/transactions?user_id=' + user.id)
+    .then(res => reloadTransactions(res.data, tbody))
 
-getData("/transactions").then(res => reloadTransactions(res.data, tBody))
-
-btnAdd.onclick = () => location.assign("/pages/transaction.html")
+headerCreater()
