@@ -32,10 +32,12 @@ form.onsubmit = (e) => {
     })
 
     transaction.card = JSON.parse(transaction.card)
-
-
-
+    
     let {card} = transaction
+    
+        if(user.total > card.total){
+            alert("Недостаточно средств")
+        }
 
     delete card.total 
     delete card.user_id 
@@ -44,7 +46,7 @@ form.onsubmit = (e) => {
         .then(res => {
             location.assign('/pages/transactions.html')
 
-            // axios.patch('/cards?id=' + card.id, {})
+            axios.patch('/cards?id=' + card.id, {total: `${cards.total}`-`${localStorage.getItem(user.total)}`})
 
         })
 }
