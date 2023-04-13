@@ -28,9 +28,13 @@ export const getSymbols = async () => {
     return symbols
 } 
 
-
 export const postData = async (path, body) => {
     const res = await axios.post(BASE_URL + path, body)
 
+    return res
+} 
+
+export const patchData = async (path, body) => {
+    const res = await axios.patch(BASE_URL + path, body)
     return res
 } 

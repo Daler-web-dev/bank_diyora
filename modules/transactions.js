@@ -1,5 +1,5 @@
 import { getData } from './http.request'
-import { reloadTransactions } from '../main'
+import { reloadTransactions } from './ui'
 import headerCreater from './header'
 let tbody = document.querySelector('tbody')
 
