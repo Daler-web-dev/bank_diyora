@@ -36,9 +36,20 @@ form.onsubmit = (e) => {
     delete card.total
     delete card.user_id
 
-    postData('/transactions', transaction)
-        .then(res => {
-            patchData('/cards/' + card.id, { "total": "total" - card.total })
-            location.assign('/pages/transactions.html')
-        })
+    userCards.forEach(el => {
+        if (el.id === card.id) {
+            if (el.total >= transaction.total) {
+                el.total = el.total - transaction.total
+                postData('/transactions', transaction)
+                    .then(() => patchData('/cards/' + card.id, el)
+                        .then(() => {
+                            location.assign('/pages/transactions.html')
+                            form.reset()
+                        }))
+            }
+            else {
+                alert("У вас не достаточно средств!")
+            }
+        }
+    })
 }

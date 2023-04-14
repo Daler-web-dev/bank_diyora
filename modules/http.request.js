@@ -36,5 +36,6 @@ export const postData = async (path, body) => {
 
 export const patchData = async (path, body) => {
     const res = await axios.patch(BASE_URL + path, body)
+    
     return res
 } 

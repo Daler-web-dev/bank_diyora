@@ -18,4 +18,4 @@ getData("/cards?user_id=" + user.id)
     .then(res => reloadWallets(res.data, wList))
 
 getData("/transactions?user_id=" + user.id)
-    .then(res => reloadTransactions(res.data, table))   
+    .then(res => reloadTransactions(res.data, table))

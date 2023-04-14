@@ -34,7 +34,7 @@
       "id": 2630918763,
       "user_id": 3,
       "name": "humo",
-      "total": null,
+      "total": 1,
       "currency": "USD"
     },
     {
@@ -48,7 +48,7 @@
       "id": 0.0018140259601411302,
       "user_id": 3,
       "name": "mastercard",
-      "total": "10",
+      "total": 9,
       "currency": "AFN"
     },
     {
@@ -68,112 +68,28 @@
   ],
   "transactions": [
     {
-      "id": 0.6536444485418342,
+      "id": 0.6977412500329307,
       "user_id": 3,
-      "date": "2023-3-11",
+      "date": "2023-4-14",
+      "card": {
+        "id": 2630918763,
+        "name": "humo",
+        "currency": "USD"
+      },
+      "total": "9",
+      "category": "asfddfasdf"
+    },
+    {
+      "id": 0.722790463951418,
+      "user_id": 3,
+      "date": "2023-4-14",
       "card": {
         "id": 0.0018140259601411302,
         "name": "mastercard",
         "currency": "AFN"
       },
-      "total": "10",
-      "category": "food"
-    },
-    {
-      "id": 0.8755528091851312,
-      "user_id": 3,
-      "date": "2023-4-11",
-      "card": {
-        "id": 2630918763,
-        "name": "humo",
-        "currency": "USD"
-      },
-      "total": "50000",
-      "category": "car"
-    },
-    {
-      "id": 0.6488779590605895,
-      "user_id": 3,
-      "date": "2023-4-13",
-      "card": {
-        "id": 2630918763,
-        "name": "humo",
-        "currency": "USD"
-      },
-      "total": "10",
-      "category": "lyuboye"
-    },
-    {
-      "id": 0.3881174308893591,
-      "user_id": 3,
-      "date": "2023-4-13",
-      "card": {
-        "id": 2630918763,
-        "name": "humo",
-        "currency": "USD"
-      },
-      "total": "50",
-      "category": "rabotayet"
-    },
-    {
-      "id": 0.9467458072817863,
-      "user_id": 3,
-      "date": "2023-4-13",
-      "card": {
-        "id": 2630918763,
-        "name": "humo",
-        "currency": "USD"
-      },
-      "total": "50",
-      "category": "a;lsdkgj;aslfkjd"
-    },
-    {
-      "id": 0.6624804636288959,
-      "user_id": 3,
-      "date": "2023-4-13",
-      "card": {
-        "id": 2630918763,
-        "name": "humo",
-        "currency": "USD"
-      },
-      "total": "50",
-      "category": ""
-    },
-    {
-      "id": 0.007247188987111963,
-      "user_id": 3,
-      "date": "2023-4-13",
-      "card": {
-        "id": 2630918763,
-        "name": "humo",
-        "currency": "USD"
-      },
-      "total": "50",
-      "category": "asdglkadfj;"
-    },
-    {
-      "id": 0.7043143847849447,
-      "user_id": 3,
-      "date": "2023-4-13",
-      "card": {
-        "id": 2630918763,
-        "name": "humo",
-        "currency": "USD"
-      },
-      "total": "50",
-      "category": "asddg"
-    },
-    {
-      "id": 0.3541585201444166,
-      "user_id": 3,
-      "date": "2023-4-13",
-      "card": {
-        "id": 2630918763,
-        "name": "humo",
-        "currency": "USD"
-      },
-      "total": "50",
-      "category": "asf'klasjdfaf"
+      "total": "1",
+      "category": "dasfasdf"
     }
   ]
 }
