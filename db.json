@@ -64,6 +64,20 @@
       "name": "3dsmax",
       "total": "70000",
       "currency": "USD"
+    },
+    {
+      "id": 0.10175541228024465,
+      "user_id": 1,
+      "name": "mastercard",
+      "total": 30000,
+      "currency": "BTC"
+    },
+    {
+      "id": 0.07254904871032553,
+      "user_id": 1,
+      "name": "REDFOX",
+      "total": 0,
+      "currency": "AFN"
     }
   ],
   "transactions": [
@@ -90,6 +104,66 @@
       },
       "total": "50000",
       "category": "car"
+    },
+    {
+      "id": 0.009533992496918442,
+      "user_id": 1,
+      "date": "2023-4-15",
+      "card": {
+        "id": 0.07254904871032553,
+        "name": "REDFOX",
+        "currency": "AFN"
+      },
+      "total": "10",
+      "category": "food"
+    },
+    {
+      "id": 0.7167421068207231,
+      "user_id": 1,
+      "date": "2023-4-15",
+      "card": {
+        "id": 0.07254904871032553,
+        "name": "REDFOX",
+        "currency": "AFN"
+      },
+      "total": "10",
+      "category": "food"
+    },
+    {
+      "id": 0.6597183378409233,
+      "user_id": 1,
+      "date": "2023-4-15",
+      "card": {
+        "id": 0.07254904871032553,
+        "name": "REDFOX",
+        "currency": "AFN"
+      },
+      "total": "10",
+      "category": "food"
+    },
+    {
+      "id": 0.20049014521450248,
+      "user_id": 1,
+      "date": "2023-4-15",
+      "card": {
+        "id": 0.07254904871032553,
+        "name": "REDFOX",
+        "currency": "AFN"
+      },
+      "total": "10",
+      "category": "food"
+    },
+    {
+      "id": 0.9373159996624569,
+      "user_id": 1,
+      "date": "2023-4-15",
+      "card": {
+        "id": 0.10175541228024465,
+        "name": "mastercard",
+        "currency": "BTC"
+      },
+      "total": "20000",
+      "category": "food"
     }
   ]
 }

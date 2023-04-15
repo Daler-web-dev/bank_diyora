@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { postData } from './http.request'
+import { patchData, postData } from './http.request'
 import {getData} from '/modules/http.request'
 let form = document.forms.add_transaction
 let select = form.querySelector('select')
@@ -7,7 +7,6 @@ let user = JSON.parse(localStorage.getItem('user'))
 
 getData("/cards?user_id=" + user.id)
     .then(res => {
-        console.log(res);
         for(let item of res.data) {
             let opt = new Option(item.name, JSON.stringify(item))
             select.append(opt)
@@ -33,18 +32,29 @@ form.onsubmit = (e) => {
 
     transaction.card = JSON.parse(transaction.card)
 
-
-
     let {card} = transaction
+
+    let id = card.id 
+    let card_total = card.total 
 
     delete card.total 
     delete card.user_id 
 
-    postData('/transactions', transaction)
-        .then(res => {
-            location.assign('/pages/transactions.html')
-
-            // axios.patch('/cards?id=' + card.id, {})
-
-        })
+    if(transaction.total > card_total || transaction.total <= 0) {
+        alert('Недостаточно средств')
+    } else {
+        postData('/transactions', transaction)
+            .then(res => {
+                
+                if(res.status === 200 || res.status === 201) {
+                    patchData('/cards/' + id, {total: card_total - transaction.total})
+                        .then(res => {
+                            if(res.status === 201 || res.status === 200) {
+                                location.assign('/pages/transactions.html')
+                            }
+                        })
+                }
+    
+            })
+    }
 }
